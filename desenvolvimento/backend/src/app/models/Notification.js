@@ -7,6 +7,7 @@ class Notification extends Model {
     super.init({
       content: Sequelize.STRING,
       user: Sequelize.INTEGER,
+      read: Sequelize.BOOLEAN,
     }, {
       sequelize,
     });

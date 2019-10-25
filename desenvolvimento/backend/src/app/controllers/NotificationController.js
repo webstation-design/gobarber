@@ -23,6 +23,16 @@ class NotificationController {
 
   }
 
+  async update(req, res) {
+
+    const notification = await Notification.findByPk(req.params.id);
+
+    notification.update({ read: true });
+
+    res.json(notification);
+
+  }
+
 }
 
 export default new NotificationController();

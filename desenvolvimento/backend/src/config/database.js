@@ -1,6 +1,6 @@
 module.exports = {
-  username: 'admin',
-  password: 'noo9g2l',
+  username: 'dev',
+  password: '4jAfQ96b7d6P7Kqx',
   database: 'gobarber',
   host: 'localhost',
   dialect: 'mysql',
