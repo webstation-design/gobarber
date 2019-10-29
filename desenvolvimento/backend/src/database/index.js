@@ -4,9 +4,10 @@ import databaseConfig from '../config/database';
 import Appointment from '../app/models/Appointment';
 import File from '../app/models/File';
 import Notification from '../app/models/Notification';
+import Queue from '../app/models/Queue';
 import User from '../app/models/User';
 
-const models = [Appointment, File, Notification, User];
+const models = [Appointment, File, Notification, Queue, User];
 
 class Database {
 

@@ -8,7 +8,6 @@ import Notification from '../models/Notification';
 import User from '../models/User';
 
 import CancellationMail from '../jobs/CancellationMail';
-import Queue from '../../lib/Queue';
 
 class AppointmentController {
 
@@ -140,9 +139,7 @@ class AppointmentController {
 
     appointment.update({ canceled_at: new Date() });
 
-    await Queue.add(CancellationMail.key, {
-      appointment,
-    });
+    CancellationMail.process(appointment);
 
     return res.json(appointment);
 
