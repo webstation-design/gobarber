@@ -14,7 +14,7 @@ class CancellationMail {
 
     try {
 
-      await Mail.senddMain({
+      await Mail.sendMain({
         to: `${appointment.provider.name} <${appointment.provider.email}>`,
         subject: 'Agendamento cancelado',
         template: 'cancellation',
@@ -32,14 +32,14 @@ class CancellationMail {
     }
     catch (err) {
 
-      console.log(err);
+      console.log(err.message);
 
-      /*await Queue.create({
+      await Queue.create({
         key: this.key,
         error: true,
-        message: err,
+        message: err.message,
         appointment_id: appointment.id,
-      });*/
+      });
 
     }
 
